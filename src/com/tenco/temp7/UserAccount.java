@@ -10,7 +10,7 @@ public class UserAccount {
 		balance = balance + money;
 	}
 
-	// 출금
+	// 출금 
 	public int withdraw(int money) {
 		// 방어적 코드 작성
 		if (balance < money) {

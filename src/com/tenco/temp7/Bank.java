@@ -19,7 +19,7 @@ public class Bank {
 		
 		choice1();// 돈을 쓸지 저금을 할지 선택
 		
-		
+		 
 		 
 	}
 	

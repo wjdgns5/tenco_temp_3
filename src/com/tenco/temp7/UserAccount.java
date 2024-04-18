@@ -23,6 +23,6 @@ public class UserAccount {
 	// 유저의 총 잔액 출력.
 	public void showInfo() {
 		System.out.println( name +"님의 현재 잔액은 :" + this.balance + "입니다.");
-	}
+	} 
 
 }

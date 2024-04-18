@@ -15,7 +15,7 @@ public class UserAccount {
 		// 방어적 코드 작성
 		if (balance < money) {
 			System.out.println("잘못된 요청입니다!");
-			return 0;
+			return 0; 
 		}
 		balance = balance - money;
 		return money;

@@ -15,7 +15,7 @@ public class Bank {
 		
 		
 		for (int i = 0; i < 10; i++) {
-
+ 
 			userInfo[i] = new UserInfo(i);
 			userA[i] = new UserAccount(i);
 		}

@@ -6,30 +6,51 @@ public class Bank {
 
 	static Scanner sc = new Scanner(System.in);
 	static UserInfo[] userInfo = new UserInfo[10];
+	static UserAccount[] userA = new UserAccount[10];
+	static int personNum;
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		
-		
-		
+
 		for (int i = 0; i < 10; i++) {
-			
+
 			userInfo[i] = new UserInfo(i);
+			userA[i] = new UserAccount(i);
 		}
-		
+		personNum = choiceWho();
 		choice1();// 돈을 쓸지 저금을 할지 선택
-		
-		 
-		 
+
 	}
-	
-	
-	static void choice1(){
+
+	static void choice1() {
 		boolean flag = true;
-		while(flag)
-		System.out.println("1. 소비 2. 저금 | 선택 ㄱ ㄱ");
-		sc.nextInt();
-		
+		while (flag) {
+			System.out.println("1. 소비 2. 저금 | 선택 ㄱ ㄱ");
+			int a = sc.nextInt();
+			if (a == 1) {
+				flag = false;
+				// setvalue();
+				userA[personNum].withdraw(setvalue());
+
+			} else if (a == 2) {
+				flag = false;
+				userA[personNum].deposit(setvalue());
+			} else {
+				System.out.println("잘못된 선택 다시 ㄱ ㄱ");
+			}
+
+		}
+	}
+
+	static int setvalue() {
+		System.out.println("얼마??????????");
+		return sc.nextInt();
+
+	}
+
+	static int choiceWho() {
+		System.out.println("누구?????????? 0~9 사이 선택");
+		return sc.nextInt();
 	}
 
 }

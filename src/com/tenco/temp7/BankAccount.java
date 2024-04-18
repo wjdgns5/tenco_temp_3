@@ -4,6 +4,11 @@ public class BankAccount {
 
 	private String name; //은행이름
 	private int balance; //잔액
+	
+	public BankAccount() {
+		name ="농협";
+		
+	}
 
 	// 입금
 	public void deposit(int money) {

@@ -7,18 +7,24 @@ public class Bank {
 	static Scanner sc = new Scanner(System.in);
 	static UserInfo[] userInfo = new UserInfo[10];
 	static UserAccount[] userA = new UserAccount[10];
+	static BankAccount bankA = new BankAccount();
 	static int personNum;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
+		
 		for (int i = 0; i < 10; i++) {
 
 			userInfo[i] = new UserInfo(i);
 			userA[i] = new UserAccount(i);
 		}
-		personNum = choiceWho();
+		
+		while (bankA.getBalance() != 0) {
+			personNum = choiceWho();
 		choice1();// 돈을 쓸지 저금을 할지 선택
+		}
+		
 
 	}
 
@@ -30,11 +36,15 @@ public class Bank {
 			if (a == 1) {
 				flag = false;
 				// setvalue();
-				userA[personNum].withdraw(setvalue());
+				int x =setvalue();
+				userA[personNum].withdraw(x);
+				bankA.withdraw(x);
 
 			} else if (a == 2) {
 				flag = false;
+				int x = setvalue();
 				userA[personNum].deposit(setvalue());
+				bankA.deposit(x);
 			} else {
 				System.out.println("잘못된 선택 다시 ㄱ ㄱ");
 			}

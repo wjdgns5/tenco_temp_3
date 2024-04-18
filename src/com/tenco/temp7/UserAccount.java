@@ -5,7 +5,7 @@ public class UserAccount {
 	private String name; // 유저 이름
 	private int balance; // 잔액
 
-	// 입금
+	// 입금 
 	public void deposit(int money) {
 		balance = balance + money;
 	}

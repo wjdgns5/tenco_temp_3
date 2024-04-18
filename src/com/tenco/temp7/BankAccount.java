@@ -5,6 +5,7 @@ public class BankAccount {
 	private String name; //은행이름
 	private int balance; //잔액
 
+
 	// 입금
 	public void deposit(int money) {
 		balance = balance + money;

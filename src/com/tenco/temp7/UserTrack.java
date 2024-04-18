@@ -5,6 +5,9 @@ public class UserTrack {
 	private String name;
 
 	public void userTrack(String name) {
+		
+		Bank bank = new Bank();
+		Bank.userInfo[1].GetName();
 		UserInfo userInfo = new UserInfo();
 		this.name = userInfo.getName;
 		boolean flag = this.name.equals(name); // 방어적 코드

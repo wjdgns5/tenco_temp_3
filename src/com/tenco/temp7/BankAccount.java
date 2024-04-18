@@ -3,7 +3,7 @@ package com.tenco.temp7;
 public class BankAccount {
 
 	private String name; //은행이름
-	private int balance; //잔액
+	private static int balance; //잔액
 	
 	public BankAccount() {
 		name ="농협";
@@ -32,6 +32,12 @@ public class BankAccount {
 		System.out.println("현재 잔액은 : " + this.balance + "입니다.");
 	} 
 	
+	public int getBalane() {
+		return balance;
+	}
+	public void setBalance(int v) {
+		this.balance += v;
+	}
 	
 	
 }

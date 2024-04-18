@@ -14,7 +14,7 @@ public class Bank {
 		// TODO Auto-generated method stub
 		
 		
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {//user와 유저account 객체 10개씩 생성후 배열로 저
  
 			userInfo[i] = new UserInfo(i);
 			userA[i] = new UserAccount(i);

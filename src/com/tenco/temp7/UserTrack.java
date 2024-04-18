@@ -11,6 +11,8 @@ public class UserTrack {
 		Bank bank = new Bank();
 		String name;
 		name = Bank.userInfo[i].GetName;
+		
+		
 		UserInfo userInfo = new UserInfo();
 		this.name = userInfo.getName;
 		boolean flag = this.name.equals(name); // 방어적 코드

@@ -10,46 +10,43 @@ public class Bank {
 	static BankAccount bankA = new BankAccount();
 	static int personNum;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		
-		for (int i = 0; i < 10; i++) {
- 
-			userInfo[i] = new UserInfo(i);
-			userA[i] = new UserAccount(i);
-		}
-		
-		while (bankA.getBalance() != 0) {
-			personNum = choiceWho();
-		choice1();// 돈을 쓸지 저금을 할지 선택
-		}
-		
+	static int CHOOSED_PERSON = 0; // 0~9번 까지 총 10명중 1명을 선택가능
+	static int CHOOSED_MENU = 0; // 1~3번 까지
 
+	final static int SPEND_MONEY = 1;
+	final static int DEPOSIT_MONEY = 2;
+	final static int WIDTHDRAW_MONEY = 3;
+
+	static boolean WHILE_TRACKING = true;
+
+	
+	
+	
+
+	public static UserAccount[] getUserA() {
+		return userA;
 	}
 
-	static void choice1() {
-		boolean flag = true;
-		while (flag) {
-			System.out.println("1. 소비 2. 저금 | 선택 ㄱ ㄱ");
-			int a = sc.nextInt();
-			if (a == 1) {
-				flag = false;
-				// setvalue();
-				int x =setvalue();
-				userA[personNum].withdraw(x);
-				bankA.withdraw(x);
+	public static void setUserA(UserAccount[] userA) {
+		Bank.userA = userA;
+	}
 
-			} else if (a == 2) {
-				flag = false;
-				int x = setvalue();
-				userA[personNum].deposit(setvalue());
-				bankA.deposit(x);
+
+
+	static void userChoice() {
+
+		do {
+			System.out.println("1~10번 사이의 유저를 선택해주세요");
+			CHOOSED_PERSON = sc.nextInt();
+			if (CHOOSED_PERSON <= 0 || CHOOSED_PERSON > 10) {
+				System.out.println("잘못된 범위를 선택 했습니다. 다시 선택해주세요.");
 			} else {
-				System.out.println("잘못된 선택 다시 ㄱ ㄱ");
+				WHILE_TRACKING = false;
+				CHOOSED_PERSON--;
 			}
+		} while (WHILE_TRACKING);
 
-		}
+		WHILE_TRACKING = true;
 	}
 
 	static int setvalue() {
@@ -57,10 +54,4 @@ public class Bank {
 		return sc.nextInt();
 
 	}
-
-	static int choiceWho() {
-		System.out.println("누구?????????? 0~9 사이 선택");
-		return sc.nextInt();
-	}
-
 }
